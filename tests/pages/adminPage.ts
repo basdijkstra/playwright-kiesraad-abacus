@@ -7,7 +7,7 @@ export class AdminPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.url = 'https://toegewezen-uiterlijk-stem.abacus-test.nl/'
+        this.url = 'https://hoofdstuk-personen-lid.abacus-test.nl/'
     }
 
     async open() {
