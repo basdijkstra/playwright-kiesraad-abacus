@@ -9,8 +9,6 @@ export class ExtraOnderzoekPage {
     }
 
     async complete() {
-        await this.page.waitForTimeout(3000);
-
         await this.page.getByRole('button', { name: 'Volgende' }).click();
     }
 }
