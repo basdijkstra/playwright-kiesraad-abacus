@@ -36,7 +36,9 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://bevoegd-bepalen-gemeenteraad.abacus-test.nl' },
     },
 
     // {

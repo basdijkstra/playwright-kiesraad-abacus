@@ -2,16 +2,14 @@ import { expect, Page } from "@playwright/test";
 
 export class AdminPage {
 
-    private readonly url: string;
     private readonly page: Page;
 
     constructor(page: Page) {
         this.page = page;
-        this.url = 'https://bevoegd-bepalen-gemeenteraad.abacus-test.nl/'
     }
 
     async open() {
-        await this.page.goto(this.url);
+        await this.page.goto('/');
     }
 
     async loginAs(role: string) {
