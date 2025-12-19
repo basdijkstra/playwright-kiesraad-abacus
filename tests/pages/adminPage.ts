@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { expect, Page } from "@playwright/test";
 
 export class AdminPage {
 
@@ -7,7 +7,7 @@ export class AdminPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.url = 'https://hoofdstuk-personen-lid.abacus-test.nl/'
+        this.url = 'https://bevoegd-bepalen-gemeenteraad.abacus-test.nl/'
     }
 
     async open() {
@@ -20,5 +20,10 @@ export class AdminPage {
 
     async selectElection(election: string) {
         await this.page.getByRole('link', { name: election }).click();
+    }
+
+    async logout() {
+        await this.page.getByRole('link', { name: 'Afmelden' }).click();
+        await expect(this.page.getByRole('link', { name: 'Inloggen' })).toBeVisible();
     }
 }

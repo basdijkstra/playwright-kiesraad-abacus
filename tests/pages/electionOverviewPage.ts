@@ -4,10 +4,12 @@ export class ElectionOverviewPage {
 
     private readonly page: Page;
     public readonly header: Locator;
+    public readonly confirmationVotingCountSaved: Locator;
 
     constructor(page: Page) {
         this.page = page;
         this.header = this.page.locator('h1');
+        this.confirmationVotingCountSaved = this.page.locator('strong.heading-md');
     }
 
     async selectAvailablePollingStation(station: string) {
